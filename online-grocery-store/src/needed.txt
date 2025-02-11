@@ -1,0 +1,31 @@
+
+    
+    <button onClick={()=>setVisibleComponent("fav")}>Fruits and </button>
+    <button onClick={()=>setVisibleComponent("diary")}>Diary</button>
+    {visibleComponent==="fav" && <Freshproducts/>}
+    {visibleComponent==="diary" && <CdiaryPro/>}
+
+     <img src='fuitsvegeimg.jpg' alt='fresh products' onClick={handleImageClick}/>
+        {showComponent && <FruitsVegetables />}
+
+
+        {showComponent==="dairy" && <Dairyproducts/>}
+            {showComponent==="grains" && <Grains/>}
+            {showComponent==="vegetables" && <Vegetables/>}
+            {showComponent==="oilandmasala" && <Oil/>}
+            {showComponent==="beautyandhygiene" && <Beautyandhygiene/>}
+            {showComponent==="household" && <Household/>}
+            {showComponent==="softdrinks" && <Beverages/>}
+            {showComponent==="cakes" && <Cakes/>}
+            {showComponent==="snack" && <Snack/>}
+
+
+            import Dairyproducts from './products/Dairyproducts';
+import Grains from './products/Grains';
+import Vegetables from './products/Vegetables';
+import Oil from './products/Oil';
+import Household from './products/Household';
+import Cakes from './products/Cakes';
+import Snack from './products/Snack';
+import Beautyandhygiene from './products/Beautyandhygiene';
+import Beverages from './products/Beverages';

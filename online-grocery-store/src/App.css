@@ -90,7 +90,7 @@ tr{
   font-weight: 700;
 }
 
-button{
+.cartbtn{
   width: 100px;
   height: 30px;
   background:rgb(22, 92, 179);
@@ -98,4 +98,17 @@ button{
 }
 h1{
   margin-left:25px;
+}
+.arrow{
+position: fixed;
+margin: 20px;
+width: 70px;
+height: 40px;
+background: rebeccapurple;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.nav{
+  margin-top: 100px;
 }

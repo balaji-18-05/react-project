@@ -65,7 +65,7 @@ export  function Images() {
     <table>
         <tr><img src='./fruits/apple.jpg' alt='apple' className="img-main"></img></tr>
         <tr><td>Apple</td></tr>
-        <tr><td><button>Add to cart</button></td></tr>
+        <tr><td><button className='cartbtn'>Add to cart</button></td></tr>
     </table>
     </div>
     </>

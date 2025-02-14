@@ -82,6 +82,7 @@ img:hover{
   cursor: pointer;
   transform:scale(1.1);
   padding: auto;
+  overflow: hidden;
 }
 tr{
   text-align: center;

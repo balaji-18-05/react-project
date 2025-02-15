@@ -14,9 +14,9 @@ export default function Fruits() {
   return (
     <>
     <MenuAppBar/>
-        <nav>
+        {/* <nav>
             <Link to="/"><button className="arrow">back</button></Link>
-        </nav>
+        </nav> */}
     <div className="image-container">
     <table>
         <tr><img src='./fruits/orange.webp' alt='Orange' className="img-main"></img></tr>

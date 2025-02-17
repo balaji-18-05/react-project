@@ -1,0 +1,11 @@
+.login-container{
+    position: absolute;
+    border: 1px solid grey;
+    background: greenyellow;
+    top:50%;
+    left: 50%;
+    width: 300px;
+    height:300px;
+    display: flexbox;
+    justify-content: center;
+}

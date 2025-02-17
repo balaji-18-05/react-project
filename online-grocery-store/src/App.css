@@ -1,100 +1,63 @@
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 .image-container-main{
   border: 1px solid black;
   border-radius: 10px;
-  background-color: rgb(175, 129, 73);
+  background-color: rgb(221, 158, 81);
   margin-top: 100px;
-  height: 20vh;
+  height: 40%;
   width:  90vw;
   display:flex;
+  justify-content: left;
   padding: 50px;
   gap: 70px 40px;
   overflow:scroll;
   scrollbar-width: none;
+  
 }
-img{
+.img-cat{
   width:100px;
   height:100px;
   transition: transform .2s;
   background-color: rgb(173, 173, 237);
   border-radius: 100px;
   border: 1px solid brown;
-  overflow: hidden;
 }
-img:hover{
-  border-radius: 100px;
+img-cat:hover{
   cursor: pointer;
-  transform:scale(1.15);
+  border-radius: 50px;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
 }
 
 .image-container{
-  height: 90%;
+  height: 100%;
   width: 90%;
-  margin-top: 100px;
   display:flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 50px;
   gap: 70px 90px;
-  margin-left: 50px;
+  overflow: visible;
 }
 .img-main{
-  width:15vw;
-  height:40vh;
-  transition: transform .2s;
+  width:250px;
+  height:250px;
+  /* transition: transform .2s; */
   background-color: rgb(173, 173, 237);
-  border-radius: 10px;
+  border-radius: 100px;
   border: 1px solid brown;
-  overflow: hidden;
 }
 .img-main:hover{
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
-  transform:scale(1.1);
-  padding: auto;
-  overflow: hidden;
+   /* transform: scale(1.1);
+  transition: 0.3s ease-in-out; */
 }
 tr{
   text-align: center;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-  font-size: auto;
-  font-weight: 700;
-
+  display: flexbox;
+  justify-content: space-around;
+  margin-bottom: 15px;
 }
 
 .cartbtn{
@@ -103,24 +66,63 @@ tr{
   background:rgb(22, 92, 179);
   border-radius: 10px;
 }
-h1{
-  margin-left:25px;
-}
-/* .arrow{
-position: absolute;
-margin-top: 1;
-margin-left: 1;
-width: 70px;
-height: 40px;
-background: rebeccapurple;
-border-radius: 10px;
-cursor: pointer;
-overflow: hidden;
-} */
 
 .nav{
   margin-top: 100px;
 }
-*{
-  font-family: Outfit;
+.image-offers-container{
+  border: 1px solid black;
+  height: 90%;
+  width: 90vw;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px;
+  gap: 70px 90px;
+  background: rgb(87, 164, 56);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.img-offers{
+  width:250px;
+  height:250px;
+  /* transition: transform .2s; */
+  background-color: rgb(173, 173, 237);
+  border-radius: 100px;
+  border: 1px solid brown;
+}
+.img-offers:hover{
+  cursor: pointer;
+  border-radius: 25px;
+  overflow: hidden;
+  /* transform: scale(1.1);
+  transition: 0.3s ease-in-out; */
+}
+
+h1{
+  margin-left:2%;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+}
+#offers{
+  margin-left: 2%;
+  font-family: 'Outfit';
+  color: green;
+  font-size: x-large;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+#off2{
+  padding-left: 10px;
+}
+#off3{
+  color: red;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+.strike{
+  text-decoration: line-through;
+}
+
+.heading{
+  margin-top: 100px;
 }

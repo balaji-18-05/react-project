@@ -1,26 +1,24 @@
 .navigationbar{
-    background-color: rgb(49, 121, 202);
-    top:0;
     width: 100%;
     height: 60px;
     position: fixed;
-    z-index: 1000; 
-}
-.nav{
-    text-align: center;
-    margin-top:1%;
+    top: 0;
+    background: rgb(25, 125, 213);
+    display: flex;
+    justify-content:space-around;
+    /* background: rgba(255, 255, 255, 0.2); */
+    backdrop-filter: blur(8px);
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
 }
 .home{
-    margin-left: 2%; 
-    position: absolute;
-    margin-top: 1%;
-    text-decoration: dotted;
+ color: black;
+ font-weight: 500;
+ font: caption;
+ font-size: large;
 }
-.home:hover{
-    text-decoration: underline;
-}
-.categories{
-position: absolute;
-margin-left: 10%;
-margin-top: 1%;
+.cat{
+    color: black;
+    font-weight: 500;
+    font: caption;
+    font-size: large;
 }

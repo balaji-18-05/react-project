@@ -36,8 +36,8 @@ export default function MenuAppBar() {
             </ul>
         </div>
         } 
-        <Link to='/loginpage'><p className="home">Login/Sign up</p></Link>
-        <p className="home">cart</p>
+        <Link to='/login'><p className="home">Login/Sign up</p></Link>
+        <Link to="/cart"><p className="home">cart</p></Link>
     </div>
   )
 }

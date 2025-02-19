@@ -51,28 +51,40 @@ export  function Images() {
         </table>
        
         <table>
-            <tr><img src='/products/softdrinks.jpg' alt='softdrinks'className='img-cat'/></tr>
+            <tr>
+              <nav><Link to="/Beverages"><img src='/products/softdrinks.jpg' alt='softdrinks'className='img-cat'/></Link></nav>
+            </tr>
             <tr><td>Beverages</td></tr>
         </table>
         <table>
-            <tr><img src='/products/cakesandbiscits.jpg' alt='cakesandbiscits'className='img-cat'/></tr>
+            <tr>
+              <nav><Link to="/cakes"><img src='/products/cakesandbiscits.jpg' alt='cakesandbiscits'className='img-cat'/></Link></nav>
+            </tr>
             <tr><td>Cakes & Biscits</td></tr>
         </table>
         <table>
-            <tr><img src='/products/snack.jpeg' alt='snack'className='img-cat'/></tr>
+            <tr>
+              <nav><Link to="snacks"><img src='/products/snack.jpeg' alt='snack'className='img-cat'/></Link></nav>
+            </tr>
             <tr><td>Snacks & Chocolate</td></tr>
         </table>
         <table>
-            <tr><img src='/products/beautyandhygiene.jpeg' alt='beautyandhygiene'className='img-cat'/></tr>
+            <tr>
+              <nav><Link to="beauty"><img src='/products/beautyandhygiene.jpeg' alt='beautyandhygiene'className='img-cat'/></Link></nav>
+            </tr>
             <tr><td>Beauty & Hygiene</td></tr>
         </table>
         <table>
-            <tr><img src='/products/household.jpeg' alt='household'className='img-cat'/></tr>
+            <tr>
+              <nav><Link to="household"><img src='/products/household.jpeg' alt='household'className='img-cat'/></Link></nav>
+              </tr>
             <tr><td>cleaning & Household</td></tr>
         </table>
         <table>
-            <tr><img src='/products/flour.jpg' alt='Flours and Masala'className='img-cat'/></tr>
-            <tr><td>Flours  Masala</td></tr>
+            <tr>
+              <nav><Link to="masala"><img src='/products/flour.jpg' alt='Flours and Masala'className='img-cat'/></Link></nav>
+            </tr>
+            <tr><td>Flours & Masala</td></tr>
         </table>
     </div>
     </center>
@@ -96,8 +108,8 @@ export  function Images() {
     <table>
         <tr><img src='/fruits/grapes2.jpeg' alt='Green grapes' className="img-offers"></img></tr>
         <tr><td><button className='cartbtn' onClick={()=>popup("Grapes2")}>Add to cart</button></td></tr>
-        <tr><td>Green grapes ₹90/kg</td></tr>
-        <tr><td >30% discount on <span className='strike'>₹63</span></td></tr>
+        <tr><td>Green grapes ₹63/kg</td></tr>
+        <tr><td >30% discount on <span className='strike'>₹90</span></td></tr>
     </table>
     {isPopupVisible==="Grapes2" && (
         <div style={popupStyle}>

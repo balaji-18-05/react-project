@@ -1,7 +1,24 @@
 import React from "react"
 import MenuAppBar from "../Navbar"
-import { useState } from "react";
+import { useState ,useNavigate,useContext} from "react";
+import Footer from '../Footer'
 export default function Fruits() {
+
+  const pulsesimages =[
+    {"id":1,"img":"/fruits/apple.jpg","alt":"Apple"},
+    {"id":2,"img":"/fruits/banana.jpg","alt":" Banana"},
+    {"id":3,"img":"/fruits/grapes.webp","alt":"Red grapes"},
+    {"id":4,"img":"/fruits/grapes2.jpeg","alt":"Green grapes"},
+    {"id":5,"img":"/fruits/guava.webp","alt":"kiwi"},
+    {"id":6,"img":"/fruits/kiwi.webp","alt":"lemon"},
+    {"id":7,"img":"/fruits/lemon.webp","alt":"Lemon"},
+    {"id":8,"img":"/fruits/mango.jpg","alt":"Mango"},
+    {"id":9,"img":"/fruits/orange.webp","alt":"Orange"},
+    {"id":10,"img":"/fruits/pomegrante.jpeg","alt":"Pomegranate"},
+    {"id":11,"img":"/fruits/strawberry.jpeg","alt":"Strawberry"}, 
+    {"id":12,"img":"/fruits/watermelon.jpeg","alt":"Watermelon"},
+  ];
+
 const [isPopupVisible, setIsPopupVisible] = useState("");
             const popup = (msg) => {
               setIsPopupVisible(msg);
@@ -9,20 +26,7 @@ const [isPopupVisible, setIsPopupVisible] = useState("");
                 setIsPopupVisible(""); 
               }, 2000);
             };
-    const pulsesimages =[
-      {"id":1,"img":"/fruits/apple.jpg","alt":"Apple"},
-      {"id":2,"img":"/fruits/banana.jpg","alt":" Banana"},
-      {"id":3,"img":"/fruits/grapes.webp","alt":"Red grapes"},
-      {"id":4,"img":"/fruits/grapes2.jpeg","alt":"Green grapes"},
-      {"id":5,"img":"/fruits/guava.webp","alt":"kiwi"},
-      {"id":6,"img":"/fruits/kiwi.webp","alt":"lemon"},
-      {"id":7,"img":"/fruits/lemon.webp","alt":"Lemon"},
-      {"id":8,"img":"/fruits/mango.jpg","alt":"Mango"},
-      {"id":9,"img":"/fruits/orange.webp","alt":"Orange"},
-      {"id":10,"img":"/fruits/pomegrante.jpeg","alt":"Pomegranate"},
-      {"id":11,"img":"/fruits/strawberry.jpeg","alt":"Strawberry"}, 
-      {"id":12,"img":"/fruits/watermelon.jpeg","alt":"Watermelon"},
-    ];
+    
   return (
   <>
   <MenuAppBar/>
@@ -44,6 +48,7 @@ const [isPopupVisible, setIsPopupVisible] = useState("");
       )
     }
   </div>
+  <Footer/>
   </>
   )
   }

@@ -1,6 +1,8 @@
 import React from 'react'
 import MenuAppBar from '../Navbar';
 import { useState } from 'react';
+import Footer from '../Footer'
+
 export default function Oilandpulses() {
   const [isPopupVisible, setIsPopupVisible] = useState("");
           const popup = (msg) => {
@@ -13,18 +15,18 @@ export default function Oilandpulses() {
     {"id":1,"img":"/pulses/sundal.jpg","alt":"white channa"},
     {"id":2,"img":"/pulses/toor dhal.webp","alt":"toor dhal"},
     {"id":3,"img":"/pulses/green peas.jpg","alt":"Green peas"},
-    {"id":3,"img":"/pulses/cow peas.jpg","alt":"cow peas"},
-    {"id":3,"img":"/pulses/green gram.jpg","alt":"green gram"},
-    {"id":3,"img":"/pulses/black channa.webp","alt":"black channa"},
-    {"id":3,"img":"/pulses/urad dhal.jpg","alt":"urad dhal"},
-    {"id":3,"img":"/pulses/black urad dhal.jpg","alt":"black urad dhal"},
-    {"id":3,"img":"/pulses/horse gram.jpg","alt":"horse gram"},
-    {"id":3,"img":"/pulses/Coconut oil.jpg","alt":"Coconut oil"},
-    {"id":3,"img":"/pulses/Mustard oil.webp","alt":"Mustard oil"}, 
-    {"id":3,"img":"/pulses/Palm oil.webp","alt":"Palm oil"}, 
-    {"id":3,"img":"/pulses/soyabean oil.webp","alt":"soyabean oil"}, 
-    {"id":3,"img":"/pulses/Rice bran oil.webp","alt":"Rice bran oil"}, 
-    {"id":3,"img":"/pulses/sunflower oil.webp","alt":"sunflower oil"}, 
+    {"id":4,"img":"/pulses/cow peas.jpg","alt":"cow peas"},
+    {"id":5,"img":"/pulses/green gram.jpg","alt":"green gram"},
+    {"id":6,"img":"/pulses/black channa.webp","alt":"black channa"},
+    {"id":7,"img":"/pulses/urad dhal.jpg","alt":"urad dhal"},
+    {"id":8,"img":"/pulses/black urad dhal.jpg","alt":"black urad dhal"},
+    {"id":9,"img":"/pulses/horse gram.jpg","alt":"horse gram"},
+    {"id":10,"img":"/pulses/Coconut oil.jpg","alt":"Coconut oil"},
+    {"id":11,"img":"/pulses/Mustard oil.webp","alt":"Mustard oil"}, 
+    {"id":12,"img":"/pulses/Palm oil.webp","alt":"Palm oil"}, 
+    {"id":13,"img":"/pulses/soyabean oil.webp","alt":"soyabean oil"}, 
+    {"id":14,"img":"/pulses/Rice bran oil.webp","alt":"Rice bran oil"}, 
+    {"id":15,"img":"/pulses/sunflower oil.webp","alt":"sunflower oil"}, 
   ];
 return (
 <>
@@ -46,6 +48,7 @@ return (
     )
   }
 </div>
+<Footer/>
 </>
 )
 }

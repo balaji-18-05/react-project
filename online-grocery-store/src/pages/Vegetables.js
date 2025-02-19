@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import MenuAppBar from '../Navbar';
+import Footer from '../Footer';
 export default function Vegetables() {
     const [isPopupVisible, setIsPopupVisible] = useState("");
             const popup = (msg) => {
@@ -45,6 +46,7 @@ export default function Vegetables() {
       )
     }
   </div>
+  <Footer/>
   </>
   )
   }

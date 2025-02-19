@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import MenuAppBar from '../Navbar';
+import Footer from '../Footer';
 export default function Riceandgrains() {
   const [isPopupVisible, setIsPopupVisible] = useState("");
           const popup = (msg) => {
@@ -44,6 +45,7 @@ return (
     )
   }
 </div>
+<Footer/>
 </>
 )
 }

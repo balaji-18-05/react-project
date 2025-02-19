@@ -1,6 +1,7 @@
 import React from 'react'
 import MenuAppBar from '../Navbar'
 import { useState } from 'react';
+import Footer from '../Footer';
 export default function Diary() {
   const [isPopupVisible, setIsPopupVisible] = useState("");
               const popup = (msg) => {
@@ -40,6 +41,7 @@ export default function Diary() {
         )
       }
     </div>
+    <Footer/>
     </>
     )
     }

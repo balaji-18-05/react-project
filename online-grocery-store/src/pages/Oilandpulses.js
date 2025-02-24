@@ -1,66 +1,84 @@
-import React from 'react'
-import MenuAppBar from '../Navbar';
-import { useState } from 'react';
-import Footer from '../Footer'
-
+import React, { useContext, useState } from "react";
+import MenuAppBar from "../Navbar";
+import Footer from "../Footer";
+import { CartContext } from "./CartContext";
+import '../cart.css'
 export default function Oilandpulses() {
-  const [isPopupVisible, setIsPopupVisible] = useState("");
-          const popup = (msg) => {
-            setIsPopupVisible(msg);
-            setTimeout(() => {
-              setIsPopupVisible(""); 
-            }, 2000);
-          };
-  const pulsesimages =[
-    {"id":1,"img":"/pulses/sundal.jpg","alt":"white channa"},
-    {"id":2,"img":"/pulses/toor dhal.webp","alt":"toor dhal"},
-    {"id":3,"img":"/pulses/green peas.jpg","alt":"Green peas"},
-    {"id":4,"img":"/pulses/cow peas.jpg","alt":"cow peas"},
-    {"id":5,"img":"/pulses/green gram.jpg","alt":"green gram"},
-    {"id":6,"img":"/pulses/black channa.webp","alt":"black channa"},
-    {"id":7,"img":"/pulses/urad dhal.jpg","alt":"urad dhal"},
-    {"id":8,"img":"/pulses/black urad dhal.jpg","alt":"black urad dhal"},
-    {"id":9,"img":"/pulses/horse gram.jpg","alt":"horse gram"},
-    {"id":10,"img":"/pulses/Coconut oil.jpg","alt":"Coconut oil"},
-    {"id":11,"img":"/pulses/Mustard oil.webp","alt":"Mustard oil"}, 
-    {"id":12,"img":"/pulses/Palm oil.webp","alt":"Palm oil"}, 
-    {"id":13,"img":"/pulses/soyabean oil.webp","alt":"soyabean oil"}, 
-    {"id":14,"img":"/pulses/Rice bran oil.webp","alt":"Rice bran oil"}, 
-    {"id":15,"img":"/pulses/sunflower oil.webp","alt":"sunflower oil"}, 
+  const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
+
+  const Pulses = [
+    { id: 1, img: "/pulses/black channa.webp", name: "Black channa", price: 150, oldPrice: 200 },
+    { id: 2, img: "/pulses/black urad dhal.jpg", name: "Black urad dhal", price: 160, oldPrice: 180 },
+    { id: 3, img: "/pulses/sundal.jpg", name: "sundal", price: 150, oldPrice: 180 },
+    { id: 4, img: "/pulses/cow peas.jpg", name: "Cow peas", price: 110, oldPrice: 140 },
+    { id: 5, img: "/pulses/green gram.jpg", name: "Green gram", price: 90, oldPrice: 95 },
+    { id: 6, img: "/pulses/green peas.jpg", name: "Green peas", price: 250, oldPrice: 260 },
+    { id: 7, img: "/pulses/horse gram.jpg", name: "Horse gram", price: 190, oldPrice: 210 },
+    { id: 8, img: "/pulses/toor dhal.webp", name: "Toor dhal", price: 150, oldPrice: 160 },
+    { id: 9, img: "/pulses/urad dhal.jpg", name: "Urad dhal", price: 150, oldPrice: 160 },
+    { id: 10, img: "/pulses/Rice bran oil.webp", name: "Rice bran oil", price: 150, oldPrice: 170 },
+    { id: 11, img: "/pulses/soyabean oil.webp", name: "soya bean oil", price: 180, oldPrice: 200 },
+    { id: 12, img: "/pulses/sunflower oil.webp", name: "sunflower oil", price: 120, oldPrice: 160 },
+    { id: 13, img: "/pulses/Mustard oil.webp", name: "Mustard oil", price: 190, oldPrice: 180 },
+    { id: 14, img: "/pulses/Palm oil.webp", name: "Palm oil", price: 250, oldPrice: 290 },
   ];
-return (
-<>
-<MenuAppBar/>
-<h1 className='heading'>Oil and Pulses</h1>
-<div className='image-container'>{
-    pulsesimages.map((itr)=>(
-        <table>
-           <img src={itr.img} alt={itr.alt} className='img-main' ></img>
-           <tr><td>{itr.alt}</td></tr>
-           <tr><td><button onClick={()=>popup(itr.alt)} className="cartbtn" >Add to cart</button></td></tr>
-           {isPopupVisible==itr.alt && (
-           <div style={popupStyle}>
-             <p>{itr.alt} added to cart</p>
-           </div>
-         )}
-       </table>
-    )
-    )
-  }
-</div>
-<Footer/>
-</>
-)
+
+  const [isPopupVisible, setIsPopupVisible] = useState("");
+
+  const handleAddToCart = (pulse) => {
+    addToCart(pulse);
+    setIsPopupVisible(pulse.name);
+    setTimeout(() => setIsPopupVisible(""), 1500);
+  };
+
+  return (
+    <>
+      <MenuAppBar />
+      <h1 className="heading">Oil and pulses :</h1>
+      <div className="image-container">
+        {Pulses.map((pulse) => {
+          const cartItem = cart.find((item) => item.id === pulse.id);
+          return (
+            <div key={pulse.id} className="img-card">
+              <img src={pulse.img} alt={pulse.name} className="img-main" />
+              <div className="content">
+
+              <p>{pulse.name}</p>
+              <p>₹{pulse.name === "Lemon" ? `${pulse.price}/piece` : `${pulse.price}/kg`}</p>
+              <p>Discounted from <s>₹{pulse.oldPrice}</s></p>
+              
+              {cartItem ? (
+                <div>
+                  Quantity : 
+                  <span className="quan">{cartItem.quantity}</span>
+                  <button onClick={() => decreaseQuantity(pulse.id)} className="plus_btn">➖</button>
+                  <button onClick={() => increaseQuantity(pulse.id)} className="plus_btn">➕</button>
+                  </div>
+              ) : (
+                <button onClick={() => handleAddToCart(pulse)} className="cartbtn">
+                  Add to cart
+                </button>
+              )}
+              </div>
+
+              {isPopupVisible === pulse.name && <div style={popupStyle}>{pulse.name} added to cart</div>}
+            </div>
+          );
+        })}
+      </div>
+      <Footer />
+    </>
+  );
 }
+
 const popupStyle = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  padding: '20px',
-  backgroundColor: 'rgba(0, 0, 0, 0.7)',
-  color: 'white',
-  borderRadius: '8px',
-  textAlign: 'center',
-  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)',
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  padding: "20px",
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  color: "white",
+  borderRadius: "8px",
+  textAlign: "center",
 };

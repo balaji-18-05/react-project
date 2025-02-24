@@ -1,63 +1,81 @@
-import React from 'react'
-import { useState } from 'react';
-import MenuAppBar from '../Navbar';
-import Footer from '../Footer';
+import React, { useContext, useState } from "react";
+import MenuAppBar from "../Navbar";
+import Footer from "../Footer";
+import { CartContext } from "./CartContext";
+import '../cart.css'
 export default function Riceandgrains() {
-  const [isPopupVisible, setIsPopupVisible] = useState("");
-          const popup = (msg) => {
-            setIsPopupVisible(msg);
-            setTimeout(() => {
-              setIsPopupVisible(""); 
-            }, 2000);
-          };
-  const pulsesimages =[
-    {"id":1,"img":"/riceandgrains/barley.jpg","alt":"Barley"},
-    {"id":2,"img":"/riceandgrains/corn.jpg","alt":" Sweet corn"},
-    {"id":3,"img":"/riceandgrains/millet.jpg","alt":"Millet"},
-    {"id":4,"img":"/riceandgrains/oats.jpg","alt":"oats"},
-    {"id":5,"img":"/riceandgrains/wheat.jpg","alt":"Wheat"},
-    {"id":6,"img":"/riceandgrains/basmathi.webp","alt":"Premium Basmathi rice"},
-    {"id":7,"img":"/riceandgrains/chennai basmathi.jpg","alt":"Chennai gate basmathi rice"},
-    {"id":8,"img":"/riceandgrains/Ir20.webp","alt":"IR 20 rice"},
-    {"id":9,"img":"/riceandgrains/mappilai sambha.jpg","alt":"Mappilai sambha rice"},
-    {"id":10,"img":"/riceandgrains/ponni.jpg","alt":"ponni rice"},
-    {"id":11,"img":"/riceandgrains/rajabogam.jpg","alt":"Rajabogam"}, 
-    {"id":12,"img":"/riceandgrains/seeraga sambha.jpg","alt":"seeraga sambha rice"},  
+  const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
+
+  const Riceandgrains = [
+    { id: 1, img: "/riceandgrains/corn.jpg", name: " Sweet corn", price: 150, oldPrice: 200 },
+    { id: 2, img: "/riceandgrains/millet.jpg", name: "Millet ", price: 150, oldPrice: 180 },
+    { id: 3, img: "/riceandgrains/oats.jpg", name: "Oats", price: 50, oldPrice: 80 },
+    { id: 4, img: "/riceandgrains/wheat.jpg", name: "Wheat", price: 110, oldPrice: 140 },
+    { id: 5, img: "/riceandgrains/basmathi.webp", name: "Premium Basmathi rice", price: 50, oldPrice: 70 },
+    { id: 6, img: "/riceandgrains/chennai basmathi.jpg", name: "Chennai gate basmathi rice", price: 150, oldPrice: 190 },
+    { id: 7, img: "/riceandgrains/Ir20.webp", name: "IR 20 rice", price: 5, oldPrice: 10 },
+    { id: 8, img: "/riceandgrains/mappilai sambha.jpg", name: "Mappilai sambha", price: 50, oldPrice: 60 },
+    { id: 9, img: "/riceandgrains/ponni.jpg", name: "ponni rice", price: 50, oldPrice: 60 },
+    { id: 10, img: "/riceandgrains/rajabogam.jpg", name: "Rajabogam rice", price: 150, oldPrice: 170 },
+    { id: 11, img: "/riceandgrains/seeraga sambha.jpg", name: "Seeraga sambha", price: 180, oldPrice: 200 },
   ];
-return (
-<>
-<MenuAppBar/>
-<h1 className='heading'> Rice and Grains :</h1>
-<div className='image-container'>{
-  
-    pulsesimages.map((itr)=>(
-        <table>
-           <img src={itr.img} alt={itr.alt} className='img-main' ></img>
-           <tr><td>{itr.alt}</td></tr>
-           <tr><td><button onClick={()=>popup(itr.alt)} className="cartbtn" >Add to cart</button></td></tr>
-           {isPopupVisible==itr.alt && (
-           <div style={popupStyle}>
-             <p>{itr.alt} added to cart</p>
-           </div>
-         )}
-       </table>
-    )
-    )
-  }
-</div>
-<Footer/>
-</>
-)
+
+  const [isPopupVisible, setIsPopupVisible] = useState("");
+
+  const handleAddToCart = (grains) => {
+    addToCart(grains);
+    setIsPopupVisible(grains.name);
+    setTimeout(() => setIsPopupVisible(""), 1500);
+  };
+
+  return (
+    <>
+      <MenuAppBar />
+      <h1 className="heading">Rice and grains :</h1>
+      <div className="image-container">
+        {Riceandgrains.map((grains) => {
+          const cartItem = cart.find((item) => item.id === grains.id);
+          return (
+            <div key={grains.id} className="img-card">
+              <img src={grains.img} alt={grains.name} className="img-main" />
+              <div className="content">
+
+              <p>{grains.name}</p>
+              <p>₹{grains.name === "Lemon" ? `${grains.price}/piece` : `${grains.price}/kg`}</p>
+              <p>Discounted from <s>₹{grains.oldPrice}</s></p>
+              
+              {cartItem ? (
+                <div>
+                  Quantity : 
+                  <span className="quan">{cartItem.quantity}</span>
+                  <button onClick={() => decreaseQuantity(grains.id)} className="plus_btn">➖</button>
+                  <button onClick={() => increaseQuantity(grains.id)} className="plus_btn">➕</button>
+                  </div>
+              ) : (
+                <button onClick={() => handleAddToCart(grains)} className="cartbtn">
+                  Add to cart
+                </button>
+              )}
+              </div>
+
+              {isPopupVisible === grains.name && <div style={popupStyle}>{grains.name} added to cart</div>}
+            </div>
+          );
+        })}
+      </div>
+      <Footer />
+    </>
+  );
 }
+
 const popupStyle = {
-  position: 'fixed',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  padding: '20px',
-  backgroundColor: 'rgba(0, 0, 0, 0.7)',
-  color: 'white',
-  borderRadius: '8px',
-  textAlign: 'center',
-  boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)',
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  padding: "20px",
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  color: "white",
+  borderRadius: "8px",
+  textAlign: "center",
 };

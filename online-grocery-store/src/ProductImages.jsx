@@ -1,14 +1,34 @@
 import React from 'react'
+import { useContext } from 'react';
+import { CartContext } from './pages/CartContext';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 export  function Images() {
-     const [isPopupVisible, setIsPopupVisible] = useState("");
-          const popup = (msg) => {
-            setIsPopupVisible(msg);
-            setTimeout(() => {
-              setIsPopupVisible(""); 
-            }, 2000)
-          };
+   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
+  
+    const deals = [
+      { id: 1, img: "/fruits/apple.jpg", name: "Apple", price: 150, oldPrice: 200 },
+      { id: 2, img: "/fruits/banana.jpg", name: "Banana", price: 50, oldPrice: 80 },
+      { id: 3, img: "/vegetables/carrot.jpg", name: "carrot", price: 90, oldPrice: 100 },
+      { id: 4, img: "/dairy/whippedcream.jpg", name: "whippedcream", price: 160, oldPrice: 200 },
+      { id: 5, img: "/pulses/toor dhal.webp", name: "Toor dhal", price: 50, oldPrice: 70 },
+      { id: 6, img: "/riceandgrains/millet.jpg", name: "Millet", price: 130, oldPrice: 150 },
+      { id: 7, img: "/snacks/Diary milk silk.avif", name: "Diary milk silk", price: 450, oldPrice: 500 },
+      { id: 8, img: "/dairy/butter.webp", name: "Butter", price: 270, oldPrice: 300},
+      { id: 9, img: "/flours/Fish masala.jpg", name: "Fish masala", price: 70, oldPrice: 90 },
+      { id: 10, img: "/beverages/Mango juice.jpg", name: "Mango Juice", price: 150, oldPrice: 170 },
+      { id: 11, img: "/flours/wheat rava.jpg", name: "Wheat rava", price: 25, oldPrice: 30 },
+      { id: 12, img: "/beautyandhygiene/Head and shoulders shampoo.webp", name: "Head and shoulders shampoo", price: 50, oldPrice: 60 },
+    ];
+  
+    const [isPopupVisible, setIsPopupVisible] = useState("");
+  
+    const handleAddToCart = (itr) => {
+      addToCart(itr);
+      setIsPopupVisible(itr.name);
+      setTimeout(() => setIsPopupVisible(""), 1500);
+    };
+
   return (
   <>
   <center>
@@ -93,85 +113,37 @@ export  function Images() {
     <span id='off2'>on Products upto </span>
     <span id='off3'>50%</span>
     <center>
-    <div className='image-offers-container'>
-    <table>
-        <tr><img src='/fruits/apple.jpg' alt='apple' className="img-offers"></img></tr>
-        <tr><td><button className='cartbtn' onClick={()=>popup("Apple")}>Add to cart</button></td></tr>
-        <tr><td> Fresh Apple ₹150/kg</td></tr>
-        <tr><td >25% discount on <span className='strike'>₹200</span></td></tr>
-    </table>
-    {isPopupVisible==="Apple" && (
-        <div style={popupStyle}>
-          <p>Apple added to cart</p>
-        </div>
-      )}
-    <table>
-        <tr><img src='/fruits/grapes2.jpeg' alt='Green grapes' className="img-offers"></img></tr>
-        <tr><td><button className='cartbtn' onClick={()=>popup("Grapes2")}>Add to cart</button></td></tr>
-        <tr><td>Green grapes ₹63/kg</td></tr>
-        <tr><td >30% discount on <span className='strike'>₹90</span></td></tr>
-    </table>
-    {isPopupVisible==="Grapes2" && (
-        <div style={popupStyle}>
-          <p>Green grapes added to cart</p>
-        </div>
-      )}
-    <table>
-        <tr><img src='/fruits/guava.webp' alt='Guava' className="img-offers"></img></tr>
-        <tr><td><button className='cartbtn' onClick={()=>popup("Guava")}>Add to cart</button></td></tr>
-        <tr><td>Guava ₹50/kg</td></tr>
-        <tr><td >50% discount on <span className='strike'>₹100</span></td></tr>
-    </table>
-    {isPopupVisible==="Guava" && (
-        <div style={popupStyle}>
-          <p>Guava added to cart</p>
-        </div>
-      )}
-    <table>
-        <tr><img src='/dairy/butter.webp' alt='Butter' className="img-offers"></img></tr>
-        <tr><td><button  onClick={()=>popup("Butter")} className='cartbtn'>Add to cart</button></td></tr>
-        <tr><td>Butter ₹180/kg</td></tr>
-        <tr><td >40% discount on <span className='strike'>₹300</span></td></tr>
-    </table>
-    {isPopupVisible==="Butter" && (
-        <div style={popupStyle}>
-          <p>Butter added to cart</p>
-        </div>
-      )}
-        <table>
-        <tr><img src='/dairy/ghee.jpg' alt='ghee' className="img-main"></img></tr>
-        <tr><td><button  onClick={()=>popup("Ghee")}className='cartbtn'>Add to cart</button></td></tr>
-        <tr><td>Ghee ₹510/kg</td></tr>
-        <tr><td>15% discount on <span className='strike'>₹600</span></td></tr>
-        </table>
-        {isPopupVisible==="Ghee" && (
-        <div style={popupStyle}>
-          <p>Ghee added to cart</p>
-        </div>
-      )}
-      <table>
-           <tr><img src='/vegetables/cabbage.jpg' alt='Cabbage' className="img-main"></img></tr>
-           <tr><td><button onClick={()=>popup("Cabbage")} className="cartbtn">Add to cart</button></td></tr>
-           <tr><td>Cabbage ₹40/kg</td></tr>
-           <tr><td>25% discount on <span className='strike'>₹50</span></td></tr>
-           {isPopupVisible=="Cabbage" && (
-           <div style={popupStyle}>
-             <p>Cabbage added to cart</p>
-           </div>
-         )}
-       </table>
-       <table>
-           <tr><img src='/vegetables/onion.jpg' alt='Onion' className="img-main"></img></tr>
-           <tr><td><button onClick={()=>popup("Onion")} className="cartbtn">Add to cart</button></td></tr>
-           <tr><td>Onion ₹70/kg</td></tr>
-           <tr><td>30% discount on <span className='strike'>₹100/kg</span></td></tr>
-           {isPopupVisible=="Onion" && (
-           <div style={popupStyle}>
-             <p>Onion added to cart</p>
-           </div>
-         )}
-       </table>
-    </div>
+   <div className="image-offers-container">
+        {deals.map((itr) => {
+          const cartItem = cart.find((item) => item.id === itr.id);
+          return (
+            <div key={itr.id} className="img-offers-card">
+              <img src={itr.img} alt={itr.name} className="img-offers" />
+              <div className="content">
+
+              <p>{itr.name}</p>
+              <p>₹{itr.name === "Lemon" ? `${itr.price}/piece` : `${itr.price}/kg`}</p>
+              <p>Discounted from <s>₹{itr.oldPrice}</s></p>
+              
+              {cartItem ? (
+                <div>
+                  Quantity : 
+                  <span className="quan">{cartItem.quantity}</span>
+                  <button onClick={() => decreaseQuantity(itr.id)} className="plus_btn">➖</button>
+                  <button onClick={() => increaseQuantity(itr.id)} className="plus_btn">➕</button>
+                  </div>
+              ) : (
+                <button onClick={() => handleAddToCart(itr)} className="cartbtn">
+                  Add to cart
+                </button>
+              )}
+              </div>
+
+              {isPopupVisible === itr.name && <div style={popupStyle}>{itr.name} added to cart</div>}
+            </div>
+          );
+        })}
+      </div>
     
     </center>
     </>

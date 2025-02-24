@@ -1,59 +1,79 @@
-import React from 'react'
-import MenuAppBar from '../Navbar'
-import { useState } from 'react';
-import Footer from '../Footer';
+import React, { useContext, useState } from "react";
+import MenuAppBar from "../Navbar";
+import Footer from "../Footer";
+import { CartContext } from "./CartContext";
+import '../cart.css'
 export default function Diary() {
+  const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
+
+  const Dairy = [
+    { id: 1, img: "/dairy/butter.webp", name: "Butter", price: 300, oldPrice: 330 },
+    { id: 2, img: "/dairy/cheese.jpg", name: "cheese", price: 350, oldPrice: 380 },
+    { id: 3, img: "/dairy/ghee.jpg", name: "Ghee", price: 420, oldPrice: 460 },
+    { id: 4, img: "/dairy/milk.jpg", name: "Milk", price: 60, oldPrice: 65 },
+    { id: 5, img: "/dairy/milkshake.jpg", name: "Milkshake", price: 130, oldPrice: 150 },
+    { id: 6, img: "/dairy/paneer.jpg", name: "Paneer", price: 190, oldPrice: 210 },
+    { id: 7, img: "/dairy/whippedcream.jpg", name: "whippedcream", price: 200, oldPrice: 210 },
+    { id: 8, img: "/dairy/yogurt.jpg", name: "yogurt", price: 100, oldPrice: 110 },
+
+  ];
+
   const [isPopupVisible, setIsPopupVisible] = useState("");
-              const popup = (msg) => {
-                setIsPopupVisible(msg);
-                setTimeout(() => {
-                  setIsPopupVisible(""); 
-                }, 2000);
-              };
-      const pulsesimages =[
-        {"id":1,"img":"/dairy/butter.webp","alt":"Butter"},
-        {"id":2,"img":"/dairy/ghee.jpg","alt":"Ghee"},
-        {"id":3,"img":"/dairy/milk.jpg","alt":"Milk"},
-        {"id":4,"img":"/dairy/cheese.jpg","alt":"Cheese"},
-        {"id":5,"img":"/dairy/milkshake.jpg","alt":"Milkshake"},
-        {"id":6,"img":"/dairy/paneer.jpg","alt":"Panner"},
-        {"id":7,"img":"/dairy/whippedcream.jpg","alt":"whipped cream"},
-        {"id":8,"img":"/dairy/yogurt.jpg","alt":"Yogurt"},
-      ]
-    return (
+
+  const handleAddToCart = (dairy) => {
+    addToCart(dairy);
+    setIsPopupVisible(dairy.name);
+    setTimeout(() => setIsPopupVisible(""), 1500);
+  };
+
+  return (
     <>
-    <MenuAppBar/>
-    <h1 className='heading'>  Diary products :</h1>
-    <div className='image-container'>{
-      
-        pulsesimages.map((itr)=>(
-            <table>
-               <img src={itr.img} alt={itr.alt} className='img-main' ></img>
-               <tr><td>{itr.alt}</td></tr>
-               <tr><td><button onClick={()=>popup(itr.alt)} className="cartbtn" >Add to cart</button></td></tr>
-               {isPopupVisible==itr.alt && (
-               <div style={popupStyle}>
-                 <p>{itr.alt} added to cart</p>
-               </div>
-             )}
-           </table>
-        )
-        )
-      }
-    </div>
-    <Footer/>
+      <MenuAppBar />
+      <h1 className="heading">Dairy products :</h1>
+      <div className="image-container">
+        {Dairy.map((dairy) => {
+          const cartItem = cart.find((item) => item.id === dairy.id);
+          return (
+            <div key={dairy.id} className="img-card">
+              <img src={dairy.img} alt={dairy.name} className="img-main" />
+              <div className="content">
+
+              <p>{dairy.name}</p>
+              <p>₹{dairy.name === "Lemon" ? `${dairy.price}/piece` : `${dairy.price}/kg`}</p>
+              <p>Discounted from <s>₹{dairy.oldPrice}</s></p>
+              
+              {cartItem ? (
+                <div>
+                  Quantity : 
+                  <span className="quan">{cartItem.quantity}</span>
+                  <button onClick={() => decreaseQuantity(dairy.id)} className="plus_btn">➖</button>
+                  <button onClick={() => increaseQuantity(dairy.id)} className="plus_btn">➕</button>
+                  </div>
+              ) : (
+                <button onClick={() => handleAddToCart(dairy)} className="cartbtn">
+                  Add to cart
+                </button>
+              )}
+              </div>
+
+              {isPopupVisible === dairy.name && <div style={popupStyle}>{dairy.name} added to cart</div>}
+            </div>
+          );
+        })}
+      </div>
+      <Footer />
     </>
-    )
-    }
-    const popupStyle = {
-      position: 'fixed',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      padding: '20px',
-      backgroundColor: 'rgba(0, 0, 0, 0.7)',
-      color: 'white',
-      borderRadius: '8px',
-      textAlign: 'center',
-      boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)',
-    };
+  );
+}
+
+const popupStyle = {
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  padding: "20px",
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  color: "white",
+  borderRadius: "8px",
+  textAlign: "center",
+};

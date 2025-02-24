@@ -1,64 +1,83 @@
-import React from 'react'
-import { useState } from 'react';
-import MenuAppBar from '../Navbar';
-import Footer from '../Footer';
+import React, { useContext, useState } from "react";
+import MenuAppBar from "../Navbar";
+import Footer from "../Footer";
+import { CartContext } from "./CartContext";
+import '../cart.css'
 export default function Vegetables() {
-    const [isPopupVisible, setIsPopupVisible] = useState("");
-            const popup = (msg) => {
-              setIsPopupVisible(msg);
-              setTimeout(() => {
-                setIsPopupVisible(""); 
-              }, 2000);
-            };
-    const pulsesimages =[
-      {"id":1,"img":"/vegetables/banana stem.jpg","alt":"Banana stem"},
-      {"id":2,"img":"/vegetables/beans.jpg","alt":"  Beans"},
-      {"id":3,"img":"/vegetables/beetroot.jpg","alt":"Beetroot"},
-      {"id":4,"img":"/vegetables/brinjal.jpg","alt":"Brinjal"},
-      {"id":5,"img":"/vegetables/cabbage.jpg","alt":"cabbage"},
-      {"id":6,"img":"/vegetables/carrot.jpg","alt":"carrot"},
-      {"id":7,"img":"/vegetables/green-banana.jpg","alt":"Green banana"},
-      {"id":8,"img":"/vegetables/onion.jpg","alt":"Big onion"},
-      {"id":9,"img":"/vegetables/potato.jpg","alt":"Potato "},
-      {"id":10,"img":"/vegetables/pumpkin.jpg","alt":"Pumpkin "},
-      {"id":11,"img":"/vegetables/radish.jpg","alt":"Radish"}, 
-      {"id":12,"img":"/vegetables/small onion.jpg","alt":"Small onion "},  
-      {"id":13,"img":"/vegetables/tomato.jpg","alt":"Tomato "},  
-    ];
-  return (
-  <>
-  <MenuAppBar/>
-  <h1 className='heading'>  Fresh Vegetables :</h1>
-  <div className='image-container'>{
-    
-      pulsesimages.map((itr)=>(
-          <table>
-             <img src={itr.img} alt={itr.alt} className='img-main' ></img>
-             <tr><td>{itr.alt}</td></tr>
-             <tr><td><button onClick={()=>popup(itr.alt)} className="cartbtn" >Add to cart</button></td></tr>
-             {isPopupVisible==itr.alt && (
-             <div style={popupStyle}>
-               <p>{itr.alt} added to cart</p>
-             </div>
-           )}
-         </table>
-      )
-      )
-    }
-  </div>
-  <Footer/>
-  </>
-  )
-  }
-  const popupStyle = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    padding: '20px',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    color: 'white',
-    borderRadius: '8px',
-    textAlign: 'center',
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)',
+  const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
+
+  const Vegetables = [
+    { id: 1, img: "/vegetables/banana stem.jpg", name: "Banana stem", price: 150, oldPrice: 200 },
+    { id: 2, img: "/vegetables/beans.jpg", name: "Beans", price: 50, oldPrice: 80 },
+    { id: 3, img: "/vegetables/beetroot.jpg", name: "Beetroot", price: 50, oldPrice: 80 },
+    { id: 4, img: "/vegetables/brinjal.jpg", name: "Brinjal", price: 110, oldPrice: 140 },
+    { id: 5, img: "/vegetables/cabbage.jpg", name: "Cabbage", price: 50, oldPrice: 70 },
+    { id: 6, img: "/vegetables/carrot.jpg", name: "carrot", price: 100, oldPrice: 110 },
+    { id: 7, img: "/vegetables/green-banana.jpg", name: "Raw-banana", price: 5, oldPrice: 10 },
+    { id: 8, img: "/vegetables/onion.jpg", name: " Big Onion", price: 50, oldPrice: 60 },
+    { id: 9, img: "/vegetables/potato.jpg", name: "Potato", price: 50, oldPrice: 60 },
+    { id: 10, img: "/vegetables/pumpkin.jpg", name: "Pumpkin", price: 150, oldPrice: 170 },
+    { id: 11, img: "/vegetables/radish.jpg", name: "Radish", price: 180, oldPrice: 200 },
+    { id: 12, img: "/vegetables/small onion.jpg", name: "sunflower", price: 120, oldPrice: 160 },
+    { id: 13, img: "/vegetables/tomato.jpg", name: "Tomato", price: 50, oldPrice: 10 },
+  ];
+
+  const [isPopupVisible, setIsPopupVisible] = useState("");
+
+  const handleAddToCart = (vege) => {
+    addToCart(vege);
+    setIsPopupVisible(vege.name);
+    setTimeout(() => setIsPopupVisible(""), 1500);
   };
+
+  return (
+    <>
+      <MenuAppBar />
+      <h1 className="heading">Vegetables : </h1>
+      <div className="image-container">
+        {Vegetables.map((vege) => {
+          const cartItem = cart.find((item) => item.id === vege.id);
+          return (
+            <div key={vege.id} className="img-card">
+              <img src={vege.img} alt={vege.name} className="img-main" />
+              <div className="content">
+
+              <p>{vege.name}</p>
+              <p>₹{vege.name === "Lemon" ? `${vege.price}/piece` : `${vege.price}/kg`}</p>
+              <p>Discounted from <s>₹{vege.oldPrice}</s></p>
+              
+              {cartItem ? (
+                <div>
+                  Quantity : 
+                  <span className="quan">{cartItem.quantity}</span>
+                  <button onClick={() => decreaseQuantity(vege.id)} className="plus_btn">➖</button>
+                  <button onClick={() => increaseQuantity(vege.id)} className="plus_btn">➕</button>
+                  </div>
+              ) : (
+                <button onClick={() => handleAddToCart(vege)} className="cartbtn">
+                  Add to cart
+                </button>
+              )}
+              </div>
+
+              {isPopupVisible === vege.name && <div style={popupStyle}>{vege.name} added to cart</div>}
+            </div>
+          );
+        })}
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+const popupStyle = {
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  padding: "20px",
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  color: "white",
+  borderRadius: "8px",
+  textAlign: "center",
+};

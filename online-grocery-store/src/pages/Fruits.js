@@ -1,66 +1,82 @@
-import React from "react"
-import MenuAppBar from "../Navbar"
-import { useState ,useNavigate,useContext} from "react";
-import Footer from '../Footer'
+import React, { useContext, useState } from "react";
+import MenuAppBar from "../Navbar";
+import Footer from "../Footer";
+import { CartContext } from "./CartContext";
+import '../cart.css'
 export default function Fruits() {
+  const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
-  const pulsesimages =[
-    {"id":1,"img":"/fruits/apple.jpg","alt":"Apple"},
-    {"id":2,"img":"/fruits/banana.jpg","alt":" Banana"},
-    {"id":3,"img":"/fruits/grapes.webp","alt":"Red grapes"},
-    {"id":4,"img":"/fruits/grapes2.jpeg","alt":"Green grapes"},
-    {"id":5,"img":"/fruits/guava.webp","alt":"kiwi"},
-    {"id":6,"img":"/fruits/kiwi.webp","alt":"lemon"},
-    {"id":7,"img":"/fruits/lemon.webp","alt":"Lemon"},
-    {"id":8,"img":"/fruits/mango.jpg","alt":"Mango"},
-    {"id":9,"img":"/fruits/orange.webp","alt":"Orange"},
-    {"id":10,"img":"/fruits/pomegrante.jpeg","alt":"Pomegranate"},
-    {"id":11,"img":"/fruits/strawberry.jpeg","alt":"Strawberry"}, 
-    {"id":12,"img":"/fruits/watermelon.jpeg","alt":"Watermelon"},
+  const Fruits = [
+    { id: 1, img: "/fruits/apple.jpg", name: "Apple", price: 150, oldPrice: 200 },
+    { id: 2, img: "/fruits/banana.jpg", name: "Banana", price: 50, oldPrice: 80 },
+    { id: 3, img: "/fruits/grapes.webp", name: "Red Grapes", price: 120, oldPrice: 160 },
+    { id: 4, img: "/fruits/grapes2.jpeg", name: "Green Grapes", price: 110, oldPrice: 140 },
+    { id: 5, img: "/fruits/guava.webp", name: "Guava", price: 50, oldPrice: 70 },
+    { id: 6, img: "/fruits/kiwi.webp", name: "Kiwi", price: 150, oldPrice: 190 },
+    { id: 7, img: "/fruits/lemon.webp", name: "Lemon", price: 5, oldPrice: 10 },
+    { id: 8, img: "/fruits/mango.jpg", name: "Mango", price: 50, oldPrice: 10 },
+    { id: 9, img: "/fruits/orange.webp", name: "Orange", price: 70, oldPrice: 90 },
+    { id: 10, img: "/fruits/pomegrante.jpeg", name: "Pomegrante", price: 150, oldPrice: 170 },
+    { id: 11, img: "/fruits/strawberry.jpeg", name: "strawberry", price: 180, oldPrice: 200 },
+    { id: 12, img: "/fruits/watermelon.jpeg", name: "Watermelon", price: 50, oldPrice: 60 },
   ];
 
-const [isPopupVisible, setIsPopupVisible] = useState("");
-            const popup = (msg) => {
-              setIsPopupVisible(msg);
-              setTimeout(() => {
-                setIsPopupVisible(""); 
-              }, 2000);
-            };
-    
-  return (
-  <>
-  <MenuAppBar/>
-  <h1 className='heading'>  Fresh Fruits :</h1>
-  <div className='image-container'>{
-    
-      pulsesimages.map((itr)=>(
-          <table>
-             <img src={itr.img} alt={itr.alt} className='img-main' ></img>
-             <tr><td>{itr.alt}</td></tr>
-             <tr><td><button onClick={()=>popup(itr.alt)} className="cartbtn" >Add to cart</button></td></tr>
-             {isPopupVisible==itr.alt && (
-             <div style={popupStyle}>
-               <p>{itr.alt} added to cart</p>
-             </div>
-           )}
-         </table>
-      )
-      )
-    }
-  </div>
-  <Footer/>
-  </>
-  )
-  }
-  const popupStyle = {
-    position: 'fixed',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    padding: '20px',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    color: 'white',
-    borderRadius: '8px',
-    textAlign: 'center',
-    boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.3)',
+  const [isPopupVisible, setIsPopupVisible] = useState("");
+
+  const handleAddToCart = (fruit) => {
+    addToCart(fruit);
+    setIsPopupVisible(fruit.name);
+    setTimeout(() => setIsPopupVisible(""), 1500);
   };
+
+  return (
+    <>
+      <MenuAppBar />
+      <h1 className="heading">Fresh Fruits :</h1>
+      <div className="image-container">
+        {Fruits.map((fruit) => {
+          const cartItem = cart.find((item) => item.id === fruit.id);
+          return (
+            <div key={fruit.id} className="img-card">
+              <img src={fruit.img} alt={fruit.name} className="img-main" />
+              <div className="content">
+
+              <p>{fruit.name}</p>
+              <p>₹{fruit.name === "Lemon" ? `${fruit.price}/piece` : `${fruit.price}/kg`}</p>
+              <p>Discounted from <s>₹{fruit.oldPrice}</s></p>
+              
+              {cartItem ? (
+                <div>
+                  Quantity : 
+                  <span className="quan">{cartItem.quantity}</span>
+                  <button onClick={() => decreaseQuantity(fruit.id)} className="plus_btn">➖</button>
+                  <button onClick={() => increaseQuantity(fruit.id)} className="plus_btn">➕</button>
+                  </div>
+              ) : (
+                <button onClick={() => handleAddToCart(fruit)} className="cartbtn">
+                  Add to cart
+                </button>
+              )}
+              </div>
+
+              {isPopupVisible === fruit.name && <div style={popupStyle}>{fruit.name} added to cart</div>}
+            </div>
+          );
+        })}
+      </div>
+      <Footer />
+    </>
+  );
+}
+
+const popupStyle = {
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  padding: "20px",
+  backgroundColor: "rgba(0, 0, 0, 0.7)",
+  color: "white",
+  borderRadius: "8px",
+  textAlign: "center",
+};

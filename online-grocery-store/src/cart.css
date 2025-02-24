@@ -1,0 +1,12 @@
+.cart_heading{
+    margin: 5%;
+    text-align: center;
+}
+.cart_empty{
+    text-align: center;
+    margin-top: 18%;
+    font-size: xx-large;
+}
+.plus_btn{
+    margin: 0px 10px ;
+}

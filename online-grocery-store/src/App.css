@@ -17,7 +17,6 @@
 .img-cat{
   width:100px;
   height:100px;
-  background-color: rgb(173, 173, 237);
   border-radius: 100px;
   border: 1px solid brown;
 }
@@ -34,15 +33,31 @@ img-cat:hover{
   flex-wrap: wrap;
   justify-content: center;
   padding: 50px;
-  gap: 70px 90px;
+  gap: 70px 70px;
   overflow: visible;
 }
+.img-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: wheat;
+  width: 300px;
+  height: 400px;
+  border: 1px solid rgba(97, 91, 91, 0.647);
+  border-radius: 10px;
+}
+.content{
+  font-weight: 500;
+  margin-left: 10px;
+}
 .img-main{
+  margin: 10px 10px;
   width:250px;
   height:250px;
   transition: transform .2s;
   background-color: rgb(173, 173, 237);
-  border-radius: 100px;
+  border-radius: 10px;
   border: 1px solid brown;
 }
 .img-main:hover{
@@ -77,7 +92,7 @@ tr{
   justify-content: center;
   padding: 50px;
   gap: 70px 90px;
-  background: rgb(87, 164, 56);
+  background: rgb(170, 167, 167);
   border-radius: 10px;
   margin-top: 2%;
   margin-bottom: 10px;
@@ -85,8 +100,8 @@ tr{
 .img-offers{
   width:250px;
   height:250px;
-  /* transition: transform .2s; */
-  background-color: rgb(173, 173, 237);
+  transition: transform .2s;
+  background-color: rgb(71, 27, 27);
   border-radius: 100px;
   border: 1px solid brown;
 }
@@ -94,8 +109,17 @@ tr{
   cursor: pointer;
   border-radius: 25px;
   overflow: hidden;
-  /* transform: scale(1.1);
-  transition: 0.3s ease-in-out; */
+}
+.img-offers-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color:rgb(204, 59, 59);
+  width: 300px;
+  height: 400px;
+  border: 1px solid rgba(97, 91, 91, 0.647);
+  border-radius: 10px;
 }
 
 h1{

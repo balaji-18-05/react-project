@@ -7,19 +7,19 @@ export default function Vegetables() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Vegetables = [
-    { id: 1, img: "/vegetables/banana stem.jpg", name: "Banana stem", price: 150, oldPrice: 200 },
-    { id: 2, img: "/vegetables/beans.jpg", name: "Beans", price: 50, oldPrice: 80 },
-    { id: 3, img: "/vegetables/beetroot.jpg", name: "Beetroot", price: 50, oldPrice: 80 },
-    { id: 4, img: "/vegetables/brinjal.jpg", name: "Brinjal", price: 110, oldPrice: 140 },
-    { id: 5, img: "/vegetables/cabbage.jpg", name: "Cabbage", price: 50, oldPrice: 70 },
-    { id: 6, img: "/vegetables/carrot.jpg", name: "carrot", price: 100, oldPrice: 110 },
-    { id: 7, img: "/vegetables/green-banana.jpg", name: "Raw-banana", price: 5, oldPrice: 10 },
-    { id: 8, img: "/vegetables/onion.jpg", name: " Big Onion", price: 50, oldPrice: 60 },
-    { id: 9, img: "/vegetables/potato.jpg", name: "Potato", price: 50, oldPrice: 60 },
-    { id: 10, img: "/vegetables/pumpkin.jpg", name: "Pumpkin", price: 150, oldPrice: 170 },
-    { id: 11, img: "/vegetables/radish.jpg", name: "Radish", price: 180, oldPrice: 200 },
-    { id: 12, img: "/vegetables/small onion.jpg", name: "sunflower", price: 120, oldPrice: 160 },
-    { id: 13, img: "/vegetables/tomato.jpg", name: "Tomato", price: 50, oldPrice: 10 },
+    { id: 120, img: "/vegetables/banana stem.jpg", name: "Banana stem", price: 150, oldPrice: 200 },
+    { id: 121, img: "/vegetables/beans.jpg", name: "Beans", price: 50, oldPrice: 80 },
+    { id: 122, img: "/vegetables/beetroot.jpg", name: "Beetroot", price: 50, oldPrice: 80 },
+    { id: 123, img: "/vegetables/brinjal.jpg", name: "Brinjal", price: 110, oldPrice: 140 },
+    { id: 124, img: "/vegetables/cabbage.jpg", name: "Cabbage", price: 50, oldPrice: 70 },
+    { id: 125, img: "/vegetables/carrot.jpg", name: "carrot", price: 100, oldPrice: 110 },
+    { id: 126, img: "/vegetables/green-banana.jpg", name: "Raw-banana", price: 5, oldPrice: 10 },
+    { id: 127, img: "/vegetables/onion.jpg", name: " Big Onion", price: 50, oldPrice: 60 },
+    { id: 128, img: "/vegetables/potato.jpg", name: "Potato", price: 50, oldPrice: 60 },
+    { id: 129, img: "/vegetables/pumpkin.jpg", name: "Pumpkin", price: 150, oldPrice: 170 },
+    { id: 130, img: "/vegetables/radish.jpg", name: "Radish", price: 180, oldPrice: 200 },
+    { id: 131, img: "/vegetables/small onion.jpg", name: "sunflower", price: 120, oldPrice: 160 },
+    { id: 132, img: "/vegetables/tomato.jpg", name: "Tomato", price: 50, oldPrice: 10 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

@@ -7,17 +7,17 @@ export default function Cleaningandhousehold() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Cleaningandhousehold = [
-    { id: 1, img: "/household/colin.jpg", name: "Colin Cleaning spray", price: 150, oldPrice: 160 },
-    { id: 2, img: "/household/Dettol.jpg", name: "Dettol", price: 90, oldPrice: 100 },
-    { id: 3, img: "/household/Genteel.jpg", name: "Dettol for cleaning", price: 120, oldPrice: 130 },
-    { id: 4, img: "/household/Gloves.jpg", name: "Gloves", price: 80, oldPrice: 90 },
-    { id: 5, img: "/household/Harpic.jpg", name: "Harpic", price: 50, oldPrice: 55 },
-    { id: 6, img: "/household/mop.jpg", name: "Cleaning mop", price: 120, oldPrice: 130 },
-    { id: 7, img: "/household/Rin soap.webp", name: "Rin soap", price: 15, oldPrice: 20 },
-    { id: 8, img: "/household/Surf  excel.webp", name: "Surf excel", price: 50, oldPrice: 60 },
-    { id: 9, img: "/household/Tide soap.jpg", name: "Tide soap", price: 20, oldPrice: 25 },
-    { id: 10, img: "/household/Tide.webp", name: "Tide", price: 130, oldPrice: 140 },
-    { id: 11, img: "/household/Vanish.webp", name: "Vanish", price: 150, oldPrice: 160 },
+    { id: 52, img: "/household/colin.jpg", name: "Colin Cleaning spray", price: 150, oldPrice: 160 },
+    { id: 53, img: "/household/Dettol.jpg", name: "Dettol", price: 90, oldPrice: 100 },
+    { id: 54, img: "/household/Genteel.jpg", name: "Dettol for cleaning", price: 120, oldPrice: 130 },
+    { id: 55, img: "/household/Gloves.jpg", name: "Gloves", price: 80, oldPrice: 90 },
+    { id: 56, img: "/household/Harpic.jpg", name: "Harpic", price: 50, oldPrice: 55 },
+    { id: 57, img: "/household/mop.jpg", name: "Cleaning mop", price: 120, oldPrice: 130 },
+    { id: 58, img: "/household/Rin soap.webp", name: "Rin soap", price: 15, oldPrice: 20 },
+    { id: 59, img: "/household/Surf  excel.webp", name: "Surf excel", price: 50, oldPrice: 60 },
+    { id: 60, img: "/household/Tide soap.jpg", name: "Tide soap", price: 20, oldPrice: 25 },
+    { id: 61, img: "/household/Tide.webp", name: "Tide", price: 130, oldPrice: 140 },
+    { id: 62, img: "/household/Vanish.webp", name: "Vanish", price: 150, oldPrice: 160 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

@@ -7,18 +7,18 @@ export default function Floursandmasala() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Floursandmasala = [
-    { id: 1, img: "/flours/Aashirvaad wheat flour.jpg", name: "Aashirvaad wheat flour", price: 60, oldPrice: 65 },
-    { id: 2, img: "/flours/Chicken masala.webp", name: "Chicken masala", price: 160, oldPrice: 170 },
-    { id: 3, img: "/flours/Chilli powder.webp", name: "Red Chilli powder", price: 120, oldPrice: 130 },
-    { id: 4, img: "/flours/Corn flour.jpg", name: "Corn flour", price: 70, oldPrice: 75 },
-    { id: 5, img: "/flours/Curry masala.webp", name: "Curry masala", price: 80, oldPrice: 85 },
-    { id: 6, img: "/flours/Fish masala.jpg", name: "Fish masala", price: 75, oldPrice: 80 },
-    { id: 7, img: "/flours/Garam masala.jpg", name: "Garam masala", price: 55, oldPrice: 60 },
-    { id: 8, img: "/flours/Maida.jpg", name: "Maida", price: 100, oldPrice: 110 },
-    { id: 9, img: "/flours/Gram flour.webp", name: "Gram flour", price: 70, oldPrice: 80 },
-    { id: 10, img: "/flours/Roasted rava.webp", name: "Roasted rava", price:50, oldPrice: 55 },
-    { id: 11, img: "/flours/wheat rava.jpg", name: "wheat rava", price: 30, oldPrice:40 },
-    { id: 12, img: "/flours/Rice flour.webp", name: "Rice flour", price: 90, oldPrice: 100 },
+    { id: 71, img: "/flours/Aashirvaad wheat flour.jpg", name: "Aashirvaad wheat flour", price: 60, oldPrice: 65 },
+    { id: 72, img: "/flours/Chicken masala.webp", name: "Chicken masala", price: 160, oldPrice: 170 },
+    { id: 73, img: "/flours/Chilli powder.webp", name: "Red Chilli powder", price: 120, oldPrice: 130 },
+    { id: 74, img: "/flours/Corn flour.jpg", name: "Corn flour", price: 70, oldPrice: 75 },
+    { id: 75, img: "/flours/Curry masala.webp", name: "Curry masala", price: 80, oldPrice: 85 },
+    { id: 76, img: "/flours/Fish masala.jpg", name: "Fish masala", price: 75, oldPrice: 80 },
+    { id: 77, img: "/flours/Garam masala.jpg", name: "Garam masala", price: 55, oldPrice: 60 },
+    { id: 78, img: "/flours/Maida.jpg", name: "Maida", price: 100, oldPrice: 110 },
+    { id: 79, img: "/flours/Gram flour.webp", name: "Gram flour", price: 70, oldPrice: 80 },
+    { id: 80, img: "/flours/Roasted rava.webp", name: "Roasted rava", price:50, oldPrice: 55 },
+    { id: 81, img: "/flours/wheat rava.jpg", name: "wheat rava", price: 30, oldPrice:40 },
+    { id: 82, img: "/flours/Rice flour.webp", name: "Rice flour", price: 90, oldPrice: 100 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

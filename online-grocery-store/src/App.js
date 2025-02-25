@@ -27,11 +27,11 @@ function App() {
       <Route path='/vegetables' element={<Vegetables/>}/>
       <Route path='/oilandpulses' element={<Oilandpulses/>}/>
       <Route path='/Beverages' element={<Beverages/>}/>
-      <Route path='/cakes' element={<Cakesandbiscuits/>}/>
-      <Route path='/snacks' element={<Snackandchocolates/>}/>
-      <Route path='/beauty' element={<Beautyandhygiene/>}/>
-      <Route path='/household' element={<Cleaningandhousehold/>}/>
-      <Route path='/masala' element={<Floursandmasala/>}/>
+      <Route path='/Cakesandbiscuits' element={<Cakesandbiscuits/>}/>
+      <Route path='/Snackandchocolates' element={<Snackandchocolates/>}/>
+      <Route path='/Beautyandhygiene' element={<Beautyandhygiene/>}/>
+      <Route path='/Cleaningandhousehold' element={<Cleaningandhousehold/>}/>
+      <Route path='/Floursandmasala' element={<Floursandmasala/>}/>
       <Route path='/cart' element={<Cart/>}/>
     </Routes>
     </BrowserRouter>

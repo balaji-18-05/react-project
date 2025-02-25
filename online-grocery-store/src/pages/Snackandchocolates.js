@@ -7,19 +7,19 @@ export default function Snackandchocolates() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const snacksandcoco = [
-    { id: 1, img: "/snacks/Bingo cream and onion.webp", name: "Bingo cream and onion", price: 27, oldPrice: 30 },
-    { id: 2, img: "/snacks/Bingo madangles.webp", name: "Bingo mad Angles", price: 27, oldPrice: 30 },
-    { id: 3, img: "/snacks/Bingo original style.webp", name: "Bingo original style", price: 25, oldPrice: 30 },
-    { id: 4, img: "/snacks/Dairy milk.jpg", name: "Diary milk", price: 110, oldPrice: 120 },
-    { id: 5, img: "/snacks/Diary milk silk.avif", name: "Dairy milk silk", price: 500, oldPrice: 550 },
-    { id: 6, img: "/snacks/Five star.jpg", name: "Five star", price: 20, oldPrice: 30 },
-    { id: 7, img: "/snacks/Kitkat.webp", name: "Kitkat", price: 30, oldPrice: 40 },
-    { id: 8, img: "/snacks/Kurkure-Green-Chutney-Style.jpg", name: "Kurkure green chutney", price: 50, oldPrice: 60 },
-    { id: 9, img: "/snacks/Kurkure masala munch.jpg", name: "Kurkure masala ", price: 30, oldPrice: 40 },
-    { id: 10, img: "/snacks/Lays.jpg", name: "Lays", price: 15, oldPrice: 20 },
-    { id: 11, img: "/snacks/Mixtures.webp", name: "mixtures", price: 90, oldPrice: 100 },
-    { id: 12, img: "/snacks/Soya sticks.webp", name: "Soya sticks", price: 50, oldPrice: 60 },
-    { id: 12, img: "/snacks/Spice lays.jpg", name: "Spice lays", price: 20, oldPrice: 25 },
+    { id: 133, img: "/snacks/Bingo cream and onion.webp", name: "Bingo cream and onion", price: 27, oldPrice: 30 },
+    { id: 134, img: "/snacks/Bingo madangles.webp", name: "Bingo mad Angles", price: 27, oldPrice: 30 },
+    { id: 135, img: "/snacks/Bingo original style.webp", name: "Bingo original style", price: 25, oldPrice: 30 },
+    { id: 136, img: "/snacks/Dairy milk.jpg", name: "Diary milk", price: 110, oldPrice: 120 },
+    { id: 137, img: "/snacks/Diary milk silk.avif", name: "Dairy milk silk", price: 500, oldPrice: 550 },
+    { id: 138, img: "/snacks/Five star.jpg", name: "Five star", price: 20, oldPrice: 30 },
+    { id: 139, img: "/snacks/Kitkat.webp", name: "Kitkat", price: 30, oldPrice: 40 },
+    { id: 140, img: "/snacks/Kurkure-Green-Chutney-Style.jpg", name: "Kurkure green chutney", price: 50, oldPrice: 60 },
+    { id: 141, img: "/snacks/Kurkure masala munch.jpg", name: "Kurkure masala ", price: 30, oldPrice: 40 },
+    { id: 142, img: "/snacks/Lays.jpg", name: "Lays", price: 15, oldPrice: 20 },
+    { id: 143, img: "/snacks/Mixtures.webp", name: "mixtures", price: 90, oldPrice: 100 },
+    { id: 144, img: "/snacks/Soya sticks.webp", name: "Soya sticks", price: 50, oldPrice: 60 },
+    { id: 145, img: "/snacks/Spice lays.jpg", name: "Spice lays", price: 20, oldPrice: 25 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

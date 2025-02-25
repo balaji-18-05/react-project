@@ -7,17 +7,17 @@ export default function Riceandgrains() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Riceandgrains = [
-    { id: 1, img: "/riceandgrains/corn.jpg", name: " Sweet corn", price: 150, oldPrice: 200 },
-    { id: 2, img: "/riceandgrains/millet.jpg", name: "Millet ", price: 150, oldPrice: 180 },
-    { id: 3, img: "/riceandgrains/oats.jpg", name: "Oats", price: 50, oldPrice: 80 },
-    { id: 4, img: "/riceandgrains/wheat.jpg", name: "Wheat", price: 110, oldPrice: 140 },
-    { id: 5, img: "/riceandgrains/basmathi.webp", name: "Premium Basmathi rice", price: 50, oldPrice: 70 },
-    { id: 6, img: "/riceandgrains/chennai basmathi.jpg", name: "Chennai gate basmathi rice", price: 150, oldPrice: 190 },
-    { id: 7, img: "/riceandgrains/Ir20.webp", name: "IR 20 rice", price: 5, oldPrice: 10 },
-    { id: 8, img: "/riceandgrains/mappilai sambha.jpg", name: "Mappilai sambha", price: 50, oldPrice: 60 },
-    { id: 9, img: "/riceandgrains/ponni.jpg", name: "ponni rice", price: 50, oldPrice: 60 },
-    { id: 10, img: "/riceandgrains/rajabogam.jpg", name: "Rajabogam rice", price: 150, oldPrice: 170 },
-    { id: 11, img: "/riceandgrains/seeraga sambha.jpg", name: "Seeraga sambha", price: 180, oldPrice: 200 },
+    { id: 109, img: "/riceandgrains/corn.jpg", name: " Sweet corn", price: 150, oldPrice: 200 },
+    { id: 110, img: "/riceandgrains/millet.jpg", name: "Millet ", price: 150, oldPrice: 180 },
+    { id: 111, img: "/riceandgrains/oats.jpg", name: "Oats", price: 50, oldPrice: 80 },
+    { id: 112, img: "/riceandgrains/wheat.jpg", name: "Wheat", price: 110, oldPrice: 140 },
+    { id: 113, img: "/riceandgrains/basmathi.webp", name: "Premium Basmathi rice", price: 50, oldPrice: 70 },
+    { id: 114, img: "/riceandgrains/chennai basmathi.jpg", name: "Chennai gate basmathi rice", price: 150, oldPrice: 190 },
+    { id: 115, img: "/riceandgrains/Ir20.webp", name: "IR 20 rice", price: 5, oldPrice: 10 },
+    { id: 116, img: "/riceandgrains/mappilai sambha.jpg", name: "Mappilai sambha", price: 50, oldPrice: 60 },
+    { id: 117, img: "/riceandgrains/ponni.jpg", name: "ponni rice", price: 50, oldPrice: 60 },
+    { id: 118, img: "/riceandgrains/rajabogam.jpg", name: "Rajabogam rice", price: 150, oldPrice: 170 },
+    { id: 119, img: "/riceandgrains/seeraga sambha.jpg", name: "Seeraga sambha", price: 180, oldPrice: 200 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

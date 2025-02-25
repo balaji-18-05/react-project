@@ -44,7 +44,7 @@ export default function Cart() {
             ))}
           </div>
 
-          <h2>Total: ₹{totalAmount}</h2>
+          <h2 className="total">Total: ₹{totalAmount}</h2>
         </>
       )}
       <Footer/>

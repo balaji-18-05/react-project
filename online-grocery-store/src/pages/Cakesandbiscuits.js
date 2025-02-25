@@ -7,18 +7,18 @@ export default function Cakesandbiscuits() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Cakesandbiscuits = [
-    { id: 1, img: "/cakesandbiscuits/Bour bon.jpg", name: "Bour bon", price: 10, oldPrice: 50 },
-    { id: 2, img: "/cakesandbiscuits/Elite cupcake.jpg", name: "Elite cupcake", price: 30, oldPrice: 35 },
-    { id: 3, img: "/cakesandbiscuits/50-50.webp", name: "Red 50-50", price: 10, oldPrice: 12 },
-    { id: 4, img: "/cakesandbiscuits/Chocolate cakes.webp", name: "Chocolate cakes", price: 30, oldPrice: 40 },
-    { id: 5, img: "/cakesandbiscuits/Good day biscuit.webp", name: "Good day biscuit", price: 10, oldPrice: 15 },
-    { id: 6, img: "/cakesandbiscuits/Happy happy biscuit.jpg", name: "Happy happy biscuit", price: 10, oldPrice: 15 },
-    { id: 7, img: "/cakesandbiscuits/Horlicks biscuit.webp", name: "Horlicks biscuits", price: 35, oldPrice: 40 },
-    { id: 8, img: "/cakesandbiscuits/Milk bikis.webp", name: "Milk bikis", price: 30, oldPrice: 35 },
-    { id: 9, img: "/cakesandbiscuits/Nutri choice.webp", name: "Nutri choice", price: 70, oldPrice: 90 },
-    { id: 10, img: "/cakesandbiscuits/Oreo Biscuit.jpg", name: "Oreo Biscuit", price: 60, oldPrice: 70 },
-    { id: 11, img: "/cakesandbiscuits/Parle-G.webp", name: "Parle-G", price: 30, oldPrice: 20 },
-    { id: 12, img: "/cakesandbiscuits/Pine apple cakes.webp", name: "Pine apple cakes", price: 50, oldPrice: 60 },
+    { id: 40, img: "/cakesandbiscuits/Bour bon.jpg", name: "Bour bon", price: 10, oldPrice: 50 },
+    { id: 41, img: "/cakesandbiscuits/Elite cupcake.jpg", name: "Elite cupcake", price: 30, oldPrice: 35 },
+    { id: 42, img: "/cakesandbiscuits/50-50.webp", name: "Red 50-50", price: 10, oldPrice: 12 },
+    { id: 43, img: "/cakesandbiscuits/Chocolate cakes.webp", name: "Chocolate cakes", price: 30, oldPrice: 40 },
+    { id: 44, img: "/cakesandbiscuits/Good day biscuit.webp", name: "Good day biscuit", price: 10, oldPrice: 15 },
+    { id: 45, img: "/cakesandbiscuits/Happy happy biscuit.jpg", name: "Happy happy biscuit", price: 10, oldPrice: 15 },
+    { id: 46, img: "/cakesandbiscuits/Horlicks biscuit.webp", name: "Horlicks biscuits", price: 35, oldPrice: 40 },
+    { id: 47 , img: "/cakesandbiscuits/Milk bikis.webp", name: "Milk bikis", price: 30, oldPrice: 35 },
+    { id: 48, img: "/cakesandbiscuits/Nutri choice.webp", name: "Nutri choice", price: 70, oldPrice: 90 },
+    { id: 49, img: "/cakesandbiscuits/Oreo Biscuit.jpg", name: "Oreo Biscuit", price: 60, oldPrice: 70 },
+    { id: 50, img: "/cakesandbiscuits/Parle-G.webp", name: "Parle-G", price: 30, oldPrice: 20 },
+    { id: 51, img: "/cakesandbiscuits/Pine apple cakes.webp", name: "Pine apple cakes", price: 50, oldPrice: 60 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

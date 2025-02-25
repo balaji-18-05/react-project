@@ -7,18 +7,18 @@ export default function Fruits() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Fruits = [
-    { id: 1, img: "/fruits/apple.jpg", name: "Apple", price: 150, oldPrice: 200 },
-    { id: 2, img: "/fruits/banana.jpg", name: "Banana", price: 50, oldPrice: 80 },
-    { id: 3, img: "/fruits/grapes.webp", name: "Red Grapes", price: 120, oldPrice: 160 },
-    { id: 4, img: "/fruits/grapes2.jpeg", name: "Green Grapes", price: 110, oldPrice: 140 },
-    { id: 5, img: "/fruits/guava.webp", name: "Guava", price: 50, oldPrice: 70 },
-    { id: 6, img: "/fruits/kiwi.webp", name: "Kiwi", price: 150, oldPrice: 190 },
-    { id: 7, img: "/fruits/lemon.webp", name: "Lemon", price: 5, oldPrice: 10 },
-    { id: 8, img: "/fruits/mango.jpg", name: "Mango", price: 50, oldPrice: 10 },
-    { id: 9, img: "/fruits/orange.webp", name: "Orange", price: 70, oldPrice: 90 },
-    { id: 10, img: "/fruits/pomegrante.jpeg", name: "Pomegrante", price: 150, oldPrice: 170 },
-    { id: 11, img: "/fruits/strawberry.jpeg", name: "strawberry", price: 180, oldPrice: 200 },
-    { id: 12, img: "/fruits/watermelon.jpeg", name: "Watermelon", price: 50, oldPrice: 60 },
+    { id: 83, img: "/fruits/apple.jpg", name: "Apple", price: 150, oldPrice: 200 },
+    { id: 84, img: "/fruits/banana.jpg", name: "Banana", price: 50, oldPrice: 80 },
+    { id: 85, img: "/fruits/grapes.webp", name: "Red Grapes", price: 120, oldPrice: 160 },
+    { id: 86, img: "/fruits/grapes2.jpeg", name: "Green Grapes", price: 110, oldPrice: 140 },
+    { id: 87, img: "/fruits/guava.webp", name: "Guava", price: 50, oldPrice: 70 },
+    { id: 88, img: "/fruits/kiwi.webp", name: "Kiwi", price: 150, oldPrice: 190 },
+    { id: 89, img: "/fruits/lemon.webp", name: "Lemon", price: 5, oldPrice: 10 },
+    { id: 90, img: "/fruits/mango.jpg", name: "Mango", price: 50, oldPrice: 10 },
+    { id: 91, img: "/fruits/orange.webp", name: "Orange", price: 70, oldPrice: 90 },
+    { id: 92, img: "/fruits/pomegrante.jpeg", name: "Pomegrante", price: 150, oldPrice: 170 },
+    { id: 93, img: "/fruits/strawberry.jpeg", name: "strawberry", price: 180, oldPrice: 200 },
+    { id: 94, img: "/fruits/watermelon.jpeg", name: "Watermelon", price: 50, oldPrice: 60 },
   ];
 
   const [isPopupVisible, setIsPopupVisible] = useState("");

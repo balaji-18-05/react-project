@@ -7,7 +7,7 @@ export  function Images() {
    const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
   
     const deals = [
-      { id: 1, img: "/fruits/apple.jpg", name: "Apple", price: 150, oldPrice: 200 },
+      { id: 1, img: "/fruits/apple.jpg", name: "Apple", price: 130, oldPrice: 200 },
       { id: 2, img: "/fruits/banana.jpg", name: "Banana", price: 50, oldPrice: 80 },
       { id: 3, img: "/vegetables/carrot.jpg", name: "carrot", price: 90, oldPrice: 100 },
       { id: 4, img: "/dairy/whippedcream.jpg", name: "whippedcream", price: 160, oldPrice: 200 },
@@ -18,7 +18,7 @@ export  function Images() {
       { id: 9, img: "/flours/Fish masala.jpg", name: "Fish masala", price: 70, oldPrice: 90 },
       { id: 10, img: "/beverages/Mango juice.jpg", name: "Mango Juice", price: 150, oldPrice: 170 },
       { id: 11, img: "/flours/wheat rava.jpg", name: "Wheat rava", price: 25, oldPrice: 30 },
-      { id: 12, img: "/beautyandhygiene/Head and shoulders shampoo.webp", name: "Head and shoulders shampoo", price: 50, oldPrice: 60 },
+      { id: 12, img: "/beautyandhygiene/Head and shoulders shampoo.jpg", name: "Head and shoulders shampoo", price: 50, oldPrice: 60 },
     ];
   
     const [isPopupVisible, setIsPopupVisible] = useState("");

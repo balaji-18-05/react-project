@@ -36,7 +36,7 @@ export function CartProvider({ children }) {
         .map((item) =>
           item.id === productId ? { ...item, quantity: item.quantity - 1 } : item
         )
-        .filter((item) => item.quantity > 0) // Remove if quantity becomes 0
+        .filter((item) => item.quantity > 0)
     );
   };
 

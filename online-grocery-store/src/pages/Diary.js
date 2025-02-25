@@ -7,14 +7,14 @@ export default function Diary() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
   const Dairy = [
-    { id: 1, img: "/dairy/butter.webp", name: "Butter", price: 300, oldPrice: 330 },
-    { id: 2, img: "/dairy/cheese.jpg", name: "cheese", price: 350, oldPrice: 380 },
-    { id: 3, img: "/dairy/ghee.jpg", name: "Ghee", price: 420, oldPrice: 460 },
-    { id: 4, img: "/dairy/milk.jpg", name: "Milk", price: 60, oldPrice: 65 },
-    { id: 5, img: "/dairy/milkshake.jpg", name: "Milkshake", price: 130, oldPrice: 150 },
-    { id: 6, img: "/dairy/paneer.jpg", name: "Paneer", price: 190, oldPrice: 210 },
-    { id: 7, img: "/dairy/whippedcream.jpg", name: "whippedcream", price: 200, oldPrice: 210 },
-    { id: 8, img: "/dairy/yogurt.jpg", name: "yogurt", price: 100, oldPrice: 110 },
+    { id: 63, img: "/dairy/butter.webp", name: "Butter", price: 300, oldPrice: 330 },
+    { id: 64, img: "/dairy/cheese.jpg", name: "cheese", price: 350, oldPrice: 380 },
+    { id: 65, img: "/dairy/ghee.jpg", name: "Ghee", price: 420, oldPrice: 460 },
+    { id: 66, img: "/dairy/milk.jpg", name: "Milk", price: 60, oldPrice: 65 },
+    { id: 67, img: "/dairy/milkshake.jpg", name: "Milkshake", price: 130, oldPrice: 150 },
+    { id: 68, img: "/dairy/paneer.jpg", name: "Paneer", price: 190, oldPrice: 210 },
+    { id: 69, img: "/dairy/whippedcream.jpg", name: "whippedcream", price: 200, oldPrice: 210 },
+    { id: 70, img: "/dairy/yogurt.jpg", name: "yogurt", price: 100, oldPrice: 110 },
 
   ];
 

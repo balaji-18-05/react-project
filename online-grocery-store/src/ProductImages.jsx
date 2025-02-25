@@ -78,31 +78,31 @@ export  function Images() {
         </table>
         <table>
             <tr>
-              <nav><Link to="/cakes"><img src='/products/cakesandbiscits.jpg' alt='cakesandbiscits'className='img-cat'/></Link></nav>
+              <nav><Link to="/Cakesandbiscuits"><img src='/products/cakesandbiscits.jpg' alt='cakesandbiscits'className='img-cat'/></Link></nav>
             </tr>
             <tr><td>Cakes & Biscits</td></tr>
         </table>
         <table>
             <tr>
-              <nav><Link to="snacks"><img src='/products/snack.jpeg' alt='snack'className='img-cat'/></Link></nav>
+              <nav><Link to="Snackandchocolates"><img src='/products/snack.jpeg' alt='snack'className='img-cat'/></Link></nav>
             </tr>
             <tr><td>Snacks & Chocolate</td></tr>
         </table>
         <table>
             <tr>
-              <nav><Link to="beauty"><img src='/products/beautyandhygiene.jpeg' alt='beautyandhygiene'className='img-cat'/></Link></nav>
+              <nav><Link to="Beautyandhygiene"><img src='/products/beautyandhygiene.jpeg' alt='beautyandhygiene'className='img-cat'/></Link></nav>
             </tr>
             <tr><td>Beauty & Hygiene</td></tr>
         </table>
         <table>
             <tr>
-              <nav><Link to="household"><img src='/products/household.jpeg' alt='household'className='img-cat'/></Link></nav>
+              <nav><Link to="Cleaningandhousehold"><img src='/products/household.jpeg' alt='household'className='img-cat'/></Link></nav>
               </tr>
             <tr><td>cleaning & Household</td></tr>
         </table>
         <table>
             <tr>
-              <nav><Link to="masala"><img src='/products/flour.jpg' alt='Flours and Masala'className='img-cat'/></Link></nav>
+              <nav><Link to="Floursandmasala"><img src='/products/flour.jpg' alt='Flours and Masala'className='img-cat'/></Link></nav>
             </tr>
             <tr><td>Flours & Masala</td></tr>
         </table>

@@ -3,6 +3,7 @@ import MenuAppBar from "../Navbar";
 import Footer from "../Footer";
 import { CartContext } from "./CartContext";
 import '../cart.css'
+import ScrollToTop from "./Scrolltotop";
 export default function Floursandmasala() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
@@ -31,8 +32,9 @@ export default function Floursandmasala() {
 
   return (
     <>
+    <ScrollToTop/>
       <MenuAppBar />
-      <h1 className="heading">Flours & masala :</h1>
+      <h1 className="heading" >Flours & masala :</h1>
       <div className="image-container">
         {Floursandmasala.map((fruit) => {
           const cartItem = cart.find((item) => item.id === fruit.id);

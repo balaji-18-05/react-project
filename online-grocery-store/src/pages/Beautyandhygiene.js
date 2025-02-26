@@ -2,10 +2,11 @@ import React, { useContext, useState } from "react";
 import MenuAppBar from "../Navbar";
 import Footer from "../Footer";
 import { CartContext } from "./CartContext";
+import ScrollToTop from "./Scrolltotop"
 import '../cart.css'
 export default function Beautyandhygiene() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
-
+ 
   const Beautyandhygiene = [
     { id: 13, img: "/beautyandhygiene/Anti dandruff Shampoo.webp", name: "Anti dandruff Shampoo", price: 150, oldPrice: 200 },
     { id: 14, img: "/beautyandhygiene/Head and shoulders shampoo.jpg", name: "Head and shoulders shampoo", price: 50, oldPrice: 80 },
@@ -33,11 +34,12 @@ export default function Beautyandhygiene() {
     setIsPopupVisible(beauty.name);
     setTimeout(() => setIsPopupVisible(""), 1500);
   };
-
+ 
   return (
     <>
-      <MenuAppBar />
-      <h1 className="heading"> Beauty and hygiene :</h1>
+    <ScrollToTop/>
+      <MenuAppBar/>
+      <h1 className="heading" > Beauty and hygiene :</h1>
       <div className="image-container">
         {Beautyandhygiene.map((beauty) => {
           const cartItem = cart.find((item) => item.id === beauty.id);

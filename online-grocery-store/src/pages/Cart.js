@@ -3,15 +3,20 @@ import '../cart.css'
 import { CartContext } from "./CartContext";
 import MenuAppBar from "../Navbar";
 import Footer from "../Footer";
+import { useNavigate } from "react-router-dom";
+import ScrollToTop from "./Scrolltotop";
 export default function Cart() {
+
+  const navigate = useNavigate();
 
   const { cart, increaseQuantity, decreaseQuantity, removeFromCart } = useContext(CartContext);
 
   const totalAmount = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    
+    <>
     <div>
+    <ScrollToTop/>
       <MenuAppBar></MenuAppBar>
       <div className="cart_heading">
       <img src="/gif/cartgif.gif"></img>
@@ -20,7 +25,7 @@ export default function Cart() {
       
       {cart.length === 0 ? (
         <p className="cart_empty">
-          <marquee direction="Right" loop="" >Your cart is empty!</marquee>
+         Your cart is empty!
         </p>
       ) : (
         <>
@@ -38,16 +43,41 @@ export default function Cart() {
                     {item.quantity}
                     <button onClick={() => increaseQuantity(item.id)} className="plus_btn">➕</button>
                   </p>
-                  <button onClick={() => removeFromCart(item.id)} className="remove-btn">Remove</button>
+                  <button onClick={() => removeFromCart(item.id)} className="btn btn-danger">Remove</button>
                 </div>
               </div>
             ))}
           </div>
-
-          <h2 className="total">Total: ₹{totalAmount}</h2>
         </>
       )}
-      <Footer/>
+      
     </div>
+    
+    <div className="proceed_btn">
+    <p className="check_sentence">Check the cart before steping into  purchase</p>
+    <p className="check_sentence">  Total Cost : ₹{totalAmount}</p>
+    <p className="your_orders">Your orders</p>
+    <div className='checkout_container'>
+     
+    <ol>
+    {cart.map((itr, index) => (
+      <div className="purchased_list">
+        <p>
+        <span className="list_of_items">{index+1}.{itr.name}({itr.quantity})</span>
+          <span className="price_on_product">.............₹{itr.price * itr.quantity}</span>
+        </p>
+      </div>
+     ))}
+    </ol>
+    {/* <p className="total_on_list">-------------</p> */}
+    <p className="total_on_list"> <span id="tot">Total  : </span>₹{totalAmount}</p>
+
+    <p className="payment_sentence">Click the button given below to continue payment.....</p>
+      </div>
+    <button className="btn btn-danger" onClick={()=>navigate("/Checkoutpage")}>Way to Payment</button>
+  </div>
+  <Footer/>
+  </>
   );
 }
+

@@ -3,6 +3,7 @@ import MenuAppBar from "../Navbar";
 import Footer from "../Footer";
 import { CartContext } from "./CartContext";
 import '../cart.css'
+import ScrollToTop from "./Scrolltotop";
 export default function Diary() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
@@ -29,7 +30,7 @@ export default function Diary() {
   return (
     <>
       <MenuAppBar />
-      <h1 className="heading">Dairy products :</h1>
+      <h1 className="heading" >Dairy products :</h1>
       <div className="image-container">
         {Dairy.map((dairy) => {
           const cartItem = cart.find((item) => item.id === dairy.id);
@@ -62,6 +63,7 @@ export default function Diary() {
         })}
       </div>
       <Footer />
+      <ScrollToTop/>
     </>
   );
 }

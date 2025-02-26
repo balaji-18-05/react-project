@@ -1,4 +1,24 @@
+.toleft{
+  position: absolute;
+  margin-top: 6px;
+  margin-left:6%;
+  font-size: x-large;
 
+}
+.toright{
+  position: absolute;
+  margin-top: 6px;
+  margin-left:91%;
+  font-size: x-large;
+}
+#toleftarrow{
+width: 40px;
+height: 40px;
+}
+#torightarrow{
+  width: 40px;
+  height: 40px;
+  }
 .image-container-main{
   border: 1px solid black;
   border-radius: 10px;
@@ -150,3 +170,4 @@ h1{
 .heading{
   margin-top: 100px;
 }
+

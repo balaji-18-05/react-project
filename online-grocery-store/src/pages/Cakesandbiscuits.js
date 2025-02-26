@@ -3,6 +3,7 @@ import MenuAppBar from "../Navbar";
 import Footer from "../Footer";
 import { CartContext } from "./CartContext";
 import '../cart.css'
+import ScrollToTop from "./Scrolltotop";
 export default function Cakesandbiscuits() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
@@ -31,8 +32,9 @@ export default function Cakesandbiscuits() {
 
   return (
     <>
+    <ScrollToTop/>
       <MenuAppBar />
-      <h1 className="heading">Cakes &  Biscuits :</h1>
+      <h1 className="heading" >Cakes &  Biscuits :</h1>
       <div className="image-container">
         {Cakesandbiscuits.map((biscuits) => {
           const cartItem = cart.find((item) => item.id === biscuits.id);

@@ -14,6 +14,7 @@ import Beautyandhygiene from './pages/Beautyandhygiene';
 import Cleaningandhousehold from './pages/Cleaningandhousehold';
 import Floursandmasala from './pages/Floursandmasala'
 import Cart from './pages/Cart';
+import Checkoutpage from './pages/Checkout';
 function App() {
   return(
     <>
@@ -33,6 +34,7 @@ function App() {
       <Route path='/Cleaningandhousehold' element={<Cleaningandhousehold/>}/>
       <Route path='/Floursandmasala' element={<Floursandmasala/>}/>
       <Route path='/cart' element={<Cart/>}/>
+      <Route path='/Checkoutpage' element={<Checkoutpage/>}/>
     </Routes>
     </BrowserRouter>
     </>

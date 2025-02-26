@@ -27,7 +27,7 @@ export default function MenuAppBar() {
     <div className="navigationbar">
       <div className="nav_container">
         <div className="logoandname">
-          <p className="logo">🛒</p>
+          <img src="logo icon.png"></img>
           <p><span className="name">Selvi's</span><span className="store">store</span> </p>
         </div>
         <div className="home">

@@ -1,11 +1,24 @@
-import React from 'react'
-import { useContext } from 'react';
+import {React} from 'react'
+import { useContext,useState,useEffect,useRef} from 'react';
 import { CartContext } from './pages/CartContext';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link,useLocation} from 'react-router-dom';
+import ScrollToTop from './pages/Scrolltotop';
 export  function Images() {
    const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
-  
+   
+   const scrollContainerRef = useRef(null);
+
+   const ScrollToLeft = () => {
+     if (scrollContainerRef.current) {
+       scrollContainerRef.current.scrollBy({ left: -400, behavior: "smooth" });
+     }
+   }
+   const ScrollToRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  }
+
     const deals = [
       { id: 1, img: "/fruits/apple.jpg", name: "Apple", price: 130, oldPrice: 200 },
       { id: 2, img: "/fruits/banana.jpg", name: "Banana", price: 50, oldPrice: 80 },
@@ -28,11 +41,15 @@ export  function Images() {
       setIsPopupVisible(itr.name);
       setTimeout(() => setIsPopupVisible(""), 1500);
     };
-
+  
   return (
   <>
+  <ScrollToTop/>
   <center>
-    <div class='image-container-main'>
+  <p className='toleft' onClick={()=>ScrollToLeft()}><img src="leftclick.png" id="toleftarrow"></img> </p>
+  <p className='toright' onClick={()=>ScrollToRight()}> <img src="rightclick.png" id="torightarrow"></img></p>
+    <div class='image-container-main' ref={scrollContainerRef}>
+        
         <table>
             <tr>
                 <nav>

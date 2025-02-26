@@ -3,6 +3,7 @@ import MenuAppBar from "../Navbar";
 import Footer from "../Footer";
 import { CartContext } from "./CartContext";
 import '../cart.css'
+import ScrollToTop from "./Scrolltotop";
 export default function Cleaningandhousehold() {
   const { addToCart, increaseQuantity, decreaseQuantity, cart } = useContext(CartContext);
 
@@ -30,8 +31,9 @@ export default function Cleaningandhousehold() {
 
   return (
     <>
+    <ScrollToTop/>
       <MenuAppBar />
-      <h1 className="heading">Cleaning &  households :</h1>
+      <h1 className="heading" >Cleaning &  households :</h1>
       <div className="image-container">
         {Cleaningandhousehold.map((households) => {
           const cartItem = cart.find((item) => item.id === households.id);
